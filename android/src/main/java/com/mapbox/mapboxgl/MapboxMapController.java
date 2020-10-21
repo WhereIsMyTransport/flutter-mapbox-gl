@@ -873,7 +873,7 @@ final class MapboxMapController
 
   @Override
   public void dispose() {
-    if (disposed) {
+    if (disposed || registrar.activity() == null) {
       return;
     }
     disposed = true;
