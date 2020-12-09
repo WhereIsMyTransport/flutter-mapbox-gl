@@ -325,8 +325,8 @@ final class MapboxMapController
     public void onStyleLoaded(@NonNull Style style) {
       MapboxMapController.this.style = style;
       enableLineManager(style);
-      enableSymbolManager(style);
       enableCircleManager(style);
+      enableSymbolManager(style);
       if (myLocationEnabled) {
         enableLocationComponent(style);
       }

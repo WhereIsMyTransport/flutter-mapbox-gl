@@ -533,14 +533,14 @@ class MapboxMapController: NSObject, FlutterPlatformView, MGLMapViewDelegate, Ma
         lineAnnotationController!.annotationsInteractionEnabled = true
         lineAnnotationController?.delegate = self
 
-        symbolAnnotationController = MGLSymbolAnnotationController(mapView: self.mapView)
-        symbolAnnotationController!.annotationsInteractionEnabled = true
-        symbolAnnotationController?.delegate = self
-        
         circleAnnotationController = MGLCircleAnnotationController(mapView: self.mapView)
         circleAnnotationController!.annotationsInteractionEnabled = true
         circleAnnotationController?.delegate = self
 
+        symbolAnnotationController = MGLSymbolAnnotationController(mapView: self.mapView)
+        symbolAnnotationController!.annotationsInteractionEnabled = true
+        symbolAnnotationController?.delegate = self
+        
         mapReadyResult?(nil)
         if let channel = channel {
             channel.invokeMethod("map#onStyleLoaded", arguments: nil)
