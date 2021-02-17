@@ -699,6 +699,10 @@ class MapboxMapController: NSObject, FlutterPlatformView, MGLMapViewDelegate, Ma
             }
         }
 
+        symbolAnnotationController = MGLSymbolAnnotationController(mapView: self.mapView)
+        symbolAnnotationController!.annotationsInteractionEnabled = true
+        symbolAnnotationController?.delegate = self
+        
         mapReadyResult?(nil)
         if let channel = channel {
             channel.invokeMethod("map#onStyleLoaded", arguments: nil)
